@@ -16,21 +16,20 @@ const Login = ({ setauth }) => {
       alert("Fill Up all the details");
     } else {
       const response = await SignIn(form);
-      if (response.status) {
-        settoast(response.status);
-        setShowToast(true);
-        setTimeout(() => {
-          setShowToast(false);
-          settoast("");
-        }, 3000);
+      console.log(response);
+
+      if (response?.success) {
+        settoast("Login Successfully");
       } else {
-        settoast(response.msg);
-        setShowToast(true);
-        setTimeout(() => {
-          setShowToast(false);
-          settoast("");
-        }, 3000);
+        settoast(response?.message || "Login Failed");
       }
+
+      setShowToast(true);
+
+      setTimeout(() => {
+        setShowToast(false);
+        settoast("");
+      }, 3000);
     }
   };
   return (
@@ -70,7 +69,6 @@ const Login = ({ setauth }) => {
           </p>
         </div>
       </div>
-      {/* <div className={showToast==true?`show text-white`:`toast text-white`}>Login Successful</div>  */}
 
       {showToast ? (
         <div className="show text-white">{toast}</div>

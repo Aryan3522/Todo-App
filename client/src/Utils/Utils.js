@@ -1,5 +1,5 @@
 import axios from "axios";
 
-const API=axios.create({baseURL:"https://todo-list-beckend.vercel.app/"})
+const API = axios.create({ baseURL: process.env.NEXT_PUBLIC_BACKEND_URL });
 
-export {axios,API}
+export { axios, API };

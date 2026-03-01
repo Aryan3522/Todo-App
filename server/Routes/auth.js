@@ -1,9 +1,10 @@
-const express = require("express");
-const { SingUp, SignIn } = require("../controllers/authControllers");
+const { SignUp, SignIn } = require("../controllers/authControllers");
 const authRouter = express.Router();
 
-authRouter.post("/SignUp", SingUp);
+// Signup
+authRouter.post("/SignUp", SignUp);
 
+// Login
 authRouter.post("/SignIn", SignIn);
 
-module.exports=authRouter
+module.exports = authRouter;

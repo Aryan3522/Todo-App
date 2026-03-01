@@ -24,6 +24,7 @@ if (typeof window !== "undefined") {
   };
 }
 
+console.log("Backend URL " + process.env.NEXT_PUBLIC_BACKEND_URL);
 // Create Context
 export const TodoAuthContext = createContext(initialState);
 
@@ -46,7 +47,10 @@ export const TodoAuthProvider = ({ children }) => {
   // Authenticator methods
   const SignUp = async (body) => {
     try {
-      const res = await axios.post("https://todo-list-beckend.vercel.app/auth/SignUp", body);
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/SignUp`,
+        body,
+      );
       console.log(res.data);
 
       return res.data;
@@ -58,18 +62,25 @@ export const TodoAuthProvider = ({ children }) => {
   // SignIn method
   const SignIn = async (body) => {
     try {
-      const res = await axios.post("https://todo-list-beckend.vercel.app/auth/SignIn", body);
-      if (res?.data.msg) {
-        return res?.data;
-      } else {
-        const { Username, email, jwtToken, name, userId } = res?.data;
-        let todoAuthdata = { Username, email, jwtToken, userId };
-        console.log("AuthDataLocal", todoAuthdata);
-        dispatch({ type: "SIGN_IN", payload: todoAuthdata });
-        return res?.data;
-      }
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/SignIn`,
+        body,
+      );
+
+      const { Username, email, jwtToken, userId } = res.data;
+
+      let todoAuthdata = { Username, email, jwtToken, userId };
+      dispatch({ type: "SIGN_IN", payload: todoAuthdata });
+
+      return { success: true, data: res.data };
     } catch (error) {
-      console.log(error);
+      return {
+        success: false,
+        message:
+          error.response?.data?.message ||
+          error.response?.data ||
+          "Something went wrong",
+      };
     }
   };
 
