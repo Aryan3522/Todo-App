@@ -60,25 +60,6 @@ export const TodoAuthProvider = ({ children }) => {
   };
 
   // SignIn method
-  // const SignIn = async (body) => {
-  //   try {
-  //     const res = await axios.post(
-  //       `${process.env.NEXT_PUBLIC_BACKEND_URL}auth/SignIn`,
-  //       body,
-  //     );
-  //     if (res?.data.msg) {
-  //       return res?.data;
-  //     } else {
-  //       const { Username, email, jwtToken, name, userId } = res?.data;
-  //       let todoAuthdata = { Username, email, jwtToken, userId };
-  //       console.log("AuthDataLocal", todoAuthdata);
-  //       dispatch({ type: "SIGN_IN", payload: todoAuthdata });
-  //       return res?.data;
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
   const SignIn = async (body) => {
     try {
       const res = await axios.post(

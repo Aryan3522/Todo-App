@@ -26,6 +26,5 @@ app.get("/", (req,res)=>{
 });
 
 app.listen(process.env.PORT, () => {
-  console.log("Server is connected");
-
+  console.log(`Listening to Server on ${PORT}`);
 });
