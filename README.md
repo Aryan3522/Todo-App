@@ -1,4 +1,5 @@
 # 📝 Todo Application – Next.js + Node.js
+
 A production-grade full-stack Todo Application built with Next.js (Frontend) and Node.js (Backend).
 
 This repository is open for open-source contributions. If you’re looking to collaborate on a real-world structured application with frontend + backend integration, this is the right place.
@@ -9,7 +10,14 @@ This repository is open for open-source contributions. If you’re looking to co
 ![Open Source](https://img.shields.io/badge/Open%20Source-Welcome-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
+<div align="center" style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+  <img src="./assets/todo_home.png" width="48%" />
+  <img src="./assets/login.png" width="48%" />
+  <img src="./assets/signup.png" width="48%" />
+</div>
+
 # 📌 Project Overview
+
 ### This project is a modern Todo management system designed with:
 
 #### ⚡ Next.js (App Router) for frontend
@@ -31,6 +39,7 @@ This repository is open for open-source contributions. If you’re looking to co
 # 🚀 Tech Stack
 
 ### Frontend
+
 ```text
 Next.js
 
@@ -42,7 +51,9 @@ Modern CSS / Tailwind / Bootstrap
 
 Fetch / Axios for API communication
 ```
+
 ### Backend
+
 ```text
 Node.js
 
@@ -54,7 +65,9 @@ Authentication handling
 
 Database (MongoDB)
 ```
+
 # 🛠 Prerequisites
+
 ### Before running this project locally, ensure you have:
 
 Node.js (v18+ recommended) <br/>
@@ -68,23 +81,32 @@ Database installed (if required, e.g., MongoDB) <br/>
 Environment variables configured <br/>
 
 ### Check installation:
+
 ```text
 node -v
 npm -v
 ```
+
 # 📥 How to Clone & Run Locally
+
 ### 1️⃣ Clone the Repository
+
 ```text
 git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 cd YOUR_REPO_NAME
 ```
+
 ### 2️⃣ Install Dependencies
+
 For Frontend:
+
 ```text
 cd client
 npm install
 ```
+
 For Backend:
+
 ```text
 cd server
 npm install
@@ -95,32 +117,43 @@ npm install
 Create .env files in both client and server directories.
 
 ##### Example (Server)
+
 ```text
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 ```
+
 Example (Client)
+
 ```text
 NEXT_PUBLIC_API_URL=http://localhost:5000
 ```
+
 ### 4️⃣ Run the Application
+
 Start Backend
+
 ```text
 cd server
 npm start
 ```
+
 Start Frontend
+
 ```text
 cd client
 npm run dev
 ```
+
 Frontend will run on:
+
 ```text
 http://localhost:3000
 ```
 
 # 🏗 Project Structure (High-Level)
+
 ```text
 root/
 │
@@ -130,11 +163,13 @@ root/
 ```
 
 # 🤝 Open Source Contributions
+
 This repository is actively open for contributions.
 
 <hr/>
 
 ###### We welcome:
+
 ```text
 UI improvements
 
@@ -152,10 +187,13 @@ Production readiness enhancements
 ```
 
 # 📋 Contribution Guidelines
+
 To maintain quality and scalability, all contributors must follow these rules:
 
 #### 1. Fork & Branch Strategy
+
 ###### Fork the repository
+
 ###### Create a new feature branch:
 
 ```text
@@ -165,6 +203,7 @@ git checkout -b feature/your-feature-name
 #### 2. Production-Safe Code Requirement
 
 All contributions must:
+
 ```
 Follow clean code principles
 
@@ -184,6 +223,7 @@ Not expose secrets
 
 Maintain consistent folder structure
 ```
+
 #### 3. UI Changes Requirements
 
 If you modify the UI: <br/>
@@ -203,6 +243,7 @@ You must include in your Pull Request:
 
     Performance impact (if any)
 ```
+
 Without screenshots and explanation, PR will not be reviewed.
 
 #### 4. Backend Changes Requirements
@@ -242,13 +283,17 @@ Backward compatibility confirmation
 ###### Confirm build passes:
 
 Frontend:
+
 ```text
 npm run build
 ```
+
 Backend:
+
 ```text
 npm run build
 ```
+
 The code must pass production builds successfully.
 
 #### 6. Commit Message Standards
@@ -264,6 +309,7 @@ refactor: optimized context state update
 # 📦 Pull Request Checklist
 
 Before submitting PR, confirm:
+
 ```text
  Code builds successfully
 
@@ -299,9 +345,11 @@ CI/CD setup
 
 Dockerization
 ```
+
 Contributors are welcome to help drive these improvements.
 
 # 🔐 Security Policy
+
 ```text
 Do not expose API keys or secrets.
 
@@ -323,6 +371,7 @@ Predictable state management
 
 Production readiness
 ```
+
 If you are contributing, treat this as a real-world product environment.
 
 # ⭐ Support
