@@ -11,8 +11,18 @@ const Todo = () => {
   const [showTaskorForm, setshowTaskorForm] = useState("ShowTask");
   const { AuthData } = useContext(TodoAuthContext);
   useEffect(() => {
+    if (!AuthData) return;
+
+    const fetchTodos = async () => {
+      const data = await getAllTodos(AuthData);
+      dispatch({
+        type: "GET_ALL_TODOS",
+        payload: data,
+      });
+    };
+
     fetchTodos();
-  }, [todoArr]);
+  }, [AuthData]);
 
   const fetchTodos = async () => {
     const data = await getAllTodos(AuthData);
@@ -28,7 +38,7 @@ const Todo = () => {
         <>
           <h1 className="text-white">TODO-LIST</h1>
           <div className="btnContainer d-flex justify-content-end gap-2 mx-3">
-          <button
+            <button
               type="submit"
               className="btn btn-sm taskbtn shadow-lg"
               style={{
@@ -60,7 +70,7 @@ const Todo = () => {
             <TodayTasks />
             <TomorrowTasks />
           </div>
-            
+
         </>
       ) : (
         <div className="Taskcontainer">

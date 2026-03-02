@@ -24,7 +24,6 @@ if (typeof window !== "undefined") {
   };
 }
 
-console.log("Backend URL " + process.env.NEXT_PUBLIC_BACKEND_URL);
 // Create Context
 export const TodoAuthContext = createContext(initialState);
 
