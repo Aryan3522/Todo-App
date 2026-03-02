@@ -1,104 +1,198 @@
 .login-container {
-    background: rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 90%;
-    min-width: 450px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    margin: auto;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 30px 24px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: auto;
 }
 
 .login-container h2 {
-    color: #fff;
-    margin-bottom: 20px;
+  color: #fff;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .login-container input[type="email"],
 .login-container input[type="text"],
 .login-container input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    background: #333;
-    color: #fff;
+  width: 100%;
+  padding: 14px 16px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  outline: none;
+  border: 1px solid transparent;
+}
+
+.login-container input[type="email"]:focus,
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.login-container input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .login-container button {
-    background: #e74c3c;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
+  background: #e74c3c;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 14px 28px;
+  margin-top: 16px;
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
 .login-container button:hover {
-    background: #c0392b;
+  background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
 }
 
 .login-container p {
-    color: #fff;
-    margin-top: 20px;
-    transition: all .2s ease-in;
+  color: #fff;
+  margin-top: 20px;
+  font-size: 14px;
+  transition: all 0.2s ease-in;
 }
 
 .login-container p:hover {
-    cursor: pointer;
-    transform: scale(1.1);
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
+.login-container .switch-text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+.login-container .switch-text span {
+  color: #e74c3c;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-container .switch-text span:hover {
+  text-decoration: underline;
+}
+
+/* Toast Notifications */
 .toast, .show {
-    visibility: visible;
-    min-width: 200px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    padding: 10px;
-    position: fixed;
-    z-index: 999;
-    left: 50%;
-    bottom: 42px;
-    font-size: 16px;
-    transform: translateX(-50%);
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  visibility: visible;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 14px 20px;
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  bottom: 30px;
+  font-size: 14px;
+  transform: translateX(-50%);
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes fadein {
-    from { bottom: 0; opacity: 0; }
-    to { bottom: 30px; opacity: 1; }
+  from { bottom: 0; opacity: 0; }
+  to { bottom: 30px; opacity: 1; }
 }
 
 @keyframes fadeout {
-    from { bottom: 30px; opacity: 1; }
-    to { bottom: 0; opacity: 0; }
+  from { bottom: 30px; opacity: 1; }
+  to { bottom: 0; opacity: 0; }
 }
 
-@media only screen and (max-width: 600px) {
-    .login-container {
-        width: 95%;
-        min-width: 400px;
-        margin: 20px auto;
-        padding: 15px;
-    }
+/* Responsive Breakpoints */
+@media (max-width: 600px) {
+  .login-container {
+    padding: 24px 20px;
+    max-width: 100%;
+    margin: 10px auto;
+  }
 
-    .login-container input[type="email"],
-    .login-container input[type="text"],
-    .login-container input[type="password"] {
-        padding: 10px;
-    }
+  .login-container h2 {
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+  }
 
-    .toast, .show {
-        left: 50%;
-        bottom: 20px;
-        transform: translateX(-50%);
-    }
+  .login-container input[type="email"],
+  .login-container input[type="text"],
+  .login-container input[type="password"] {
+    padding: 12px 14px;
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  .login-container button {
+    padding: 12px 24px;
+    font-size: 14px;
+    margin-top: 14px;
+  }
+
+  .toast, .show {
+    left: 50%;
+    bottom: 20px;
+    min-width: 200px;
+    font-size: 13px;
+    padding: 12px 16px;
+    transform: translateX(-50%);
+  }
+
+  @keyframes fadein {
+    from { bottom: 0; opacity: 0; }
+    to { bottom: 20px; opacity: 1; }
+  }
+
+  @keyframes fadeout {
+    from { bottom: 20px; opacity: 1; }
+    to { bottom: 0; opacity: 0; }
+  }
+}
+
+@media (max-width: 400px) {
+  .login-container {
+    padding: 20px 16px;
+  }
+
+  .login-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .login-container input[type="email"],
+  .login-container input[type="text"],
+  .login-container input[type="password"] {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Animation for form switching */
+.login-container {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

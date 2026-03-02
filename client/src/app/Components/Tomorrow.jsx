@@ -7,26 +7,19 @@ const TomorrowTasks = () => {
   let date = new Date();
 
   return (
-    <div className="task-list shadow" id="tomorrow">
-      <div className="d-flex gap-2 justify-content-between">
+    <div className="task-list" id="tomorrow">
+      <div className="task-header">
         <h2>TOMORROW</h2>
-        <span
-          className="mx-1 mt-2"
-          style={{ fontSize: "1rem", color: "#f0e68c" }}
-        >
-          {date.getDate() +1}-{date.getMonth() + 1}-{date.getFullYear()}
-        </span>
+        <span className="task-date">{date.getDate() +1}-{date.getMonth() + 1}-{date.getFullYear()}</span>
       </div>
 
       {todoArr?.Tomorrow?.map((ele) => {
         return (
           <div key={ele._id} className="task">
-            <div className="form-check d-flex justify-content-center align-content-center gap-2">
+            <div className="task-content">
               <input
-                className="form-check-input bg-dark mt-1"
+                className="form-check-input"
                 type="checkbox"
-                value=""
-                id="flexCheckChecked"
                 checked={ele.completed}
                 disabled={ele.completed}
                 onChange={() => {
@@ -34,7 +27,6 @@ const TomorrowTasks = () => {
                 }}
               />
               <span
-                className="text-light "
                 style={{
                   textDecoration: `${ele.completed ? "line-through" : "none"}`,
                 }}
@@ -43,7 +35,7 @@ const TomorrowTasks = () => {
               </span>
             </div>
 
-            <div>
+            <div className="task-actions">
               <button
                 className="delete-btn"
                 onClick={() => deleteTodos(ele._id)}

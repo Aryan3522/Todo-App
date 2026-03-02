@@ -42,12 +42,10 @@ const Addtask = ({ setshowTaskorForm }) => {
     });
   };
   return (
-    <div className="containerAddtask px-4 gap-2">
+    <div className="containerAddtask">
       <input
         type="text"
-        className="rounded p-1 shadow-lg"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
+        placeholder="Enter your task..."
         autoComplete="off"
         onChange={(e) => {
           setTodoTask((prev) => {
@@ -55,10 +53,10 @@ const Addtask = ({ setshowTaskorForm }) => {
           });
         }}
       />
-      <div className="buttonclass my-3">
+      <div className="buttonclass">
         <button
           type="submit"
-          className="btn btn-sm taskbtn shadow-lg"
+          className="taskbtn"
           style={{
             background: " linear-gradient(135deg, #ff6b6b, #d63031)",
           }}
@@ -68,11 +66,11 @@ const Addtask = ({ setshowTaskorForm }) => {
             setshowTaskorForm("ShowTask");
           }}
         >
-          Add Task{" "}
+          Add Task
         </button>
         <button
           type="submit"
-          className="btn taskbtn btn-sm  shadow-lg"
+          className="taskbtn"
           style={{
             background: "linear-gradient(135deg, #6b6bff, #3036d6)",
           }}
@@ -87,7 +85,7 @@ const Addtask = ({ setshowTaskorForm }) => {
 
            <button
           type="submit"
-          className="btn btn-sm taskbtn shadow-lg"
+          className="taskbtn"
           style={{
             background: " linear-gradient(135deg, #ff6b6b, #d63031)",
           }}
@@ -96,7 +94,7 @@ const Addtask = ({ setshowTaskorForm }) => {
             setshowTaskorForm("ShowTask");
           }}
         >
-          Cancel{" "}
+          Cancel
         </button>
       </div>
     </div>

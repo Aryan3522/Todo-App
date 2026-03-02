@@ -36,11 +36,11 @@ const Todo = () => {
     <>
       {showTaskorForm === "ShowTask" ? (
         <>
-          <h1 className="text-white">TODO-LIST</h1>
-          <div className="btnContainer d-flex justify-content-end gap-2 mx-3">
+          <h1>TODO-LIST</h1>
+          <div className="btnContainer">
             <button
               type="submit"
-              className="btn btn-sm taskbtn shadow-lg"
+              className="taskbtn"
               style={{
                 background: " linear-gradient(135deg, #ff6b6b, #d63031)",
               }}
@@ -48,11 +48,11 @@ const Todo = () => {
                 setshowTaskorForm("ShowAddTask");
               }}
             >
-              Add Task{" "}
+              Add Task
             </button>
             <button
               type="submit"
-              className="btn btn-sm taskbtn shadow-lg"
+              className="taskbtn"
               style={{
                 background: "linear-gradient(135deg, #6b6bff, #3036d6)",
               }}
@@ -62,7 +62,7 @@ const Todo = () => {
                 window.location.reload();
               }}
             >
-              Log Out{" "}
+              Log Out
             </button>
           </div>
           <div className="todocontainer">
@@ -74,7 +74,7 @@ const Todo = () => {
         </>
       ) : (
         <div className="Taskcontainer">
-          <h1 className="text-white">ADD TASK</h1>
+          <h1>ADD TASK</h1>
           <Addtask setshowTaskorForm={setshowTaskorForm} />
         </div>
       )}
