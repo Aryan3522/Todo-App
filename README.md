@@ -3,6 +3,12 @@ A production-grade full-stack Todo Application built with Next.js (Frontend) and
 
 This repository is open for open-source contributions. If you’re looking to collaborate on a real-world structured application with frontend + backend integration, this is the right place.
 
+![Next.js](https://img.shields.io/badge/Next.js-13+-black)
+![Node.js](https://img.shields.io/badge/Node.js-18+-green)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-green)
+![Open Source](https://img.shields.io/badge/Open%20Source-Welcome-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-blue)
+
 # 📌 Project Overview
 ### This project is a modern Todo management system designed with:
 
