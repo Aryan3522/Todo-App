@@ -32,7 +32,7 @@ React
 
 Context API
 
-Modern CSS / Tailwind / Bootstrap (if used)
+Modern CSS / Tailwind / Bootstrap
 
 Fetch / Axios for API communication
 ```
@@ -46,7 +46,7 @@ REST APIs
 
 Authentication handling
 
-Database (MongoDB / etc. depending on your setup)
+Database (MongoDB)
 ```
 # 🛠 Prerequisites
 ### Before running this project locally, ensure you have:
